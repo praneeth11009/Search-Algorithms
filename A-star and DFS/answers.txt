@@ -1,0 +1,28 @@
+TASK 3 :
+==========
+
+Informed search cannot be used for sudoku problem. 
+
+Heuristic function : 
+--------------------
+A proper heuristic function cannot be determined as we have no idea of the goal state (we need to find the goal state in sudoku) and we cannot use heuristics at any state to get a metric on how close it is to a goal state as compared to other states at the same depth (i.e the other states with same number of unfilled squares).
+
+Path Cost :
+------------
+At any state the path cost to reach it from start is dependent on the depth of the state and the final state has depth = number of unfilled squares in start state. So the number of actions to be taken from start to goal is fixed. So an efficient function for path cost cannot be formulated as path cost will be same for all nodes at a given level and we cannot choose a node based on path cost while choosing a node to expand next.
+
+Therefore DFS is used instead of an informed search as proper path cost and heuristic function cannot be formulated.
+
+
+TASK 7 :
+==========
+
+a) The number of nodes visited will be the same as the case in which heuristic function returns zero for all nodes. This is the same as TASK 5 where a null heuristic is used. 
+	So for iit map : 80 and for mumbai map : 26743
+
+b) When there are multiple nodes, choose the heuristic at a node N as follows :
+	i) Find the unvisited goal node which is at the shortest geographic (euclidian (or) displacement) distance from node N
+	ii) Recursively compute the heuristic function for this goal node, keeping in track the list of unvisited goal nodes.
+	iii) The heuristic function is sum of the geographic distance from node N to its nearest (as per geographic distance) goal node, as in step (i) and the heuristic at this goal node computed recursively at this goal node as in step (ii)
+
+	This heuristic function gives a distance always less than the original shortest distance to cover all goal nodes from node N i.e it is admissible. It is also consistent and works as good estimate (for comaparisions between nodes) to the original distance.
