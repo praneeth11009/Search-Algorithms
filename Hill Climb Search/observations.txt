@@ -1,0 +1,29 @@
+TASK 2 vs TASK 3 vs TASK 4 :
+=============================
+Comparision of various initialization techniques :
+---------------------------------------------------
+
+The number of iterations required to for hill climbing algorithm to converge is much higher when random initialization is used.
+This is because when nearest neighbour or euclidean initializations are used, the initial tour is more closer to the optimal solution and therefore require lesser number of 2-egde flips to reach the minima in the algorithm.
+Therefore Nearest neighbour and euclidean initializations are better than random initialization.
+
+Also Nearset neighbour and euclidean intializations converge take almost same number of iterations to converge, but Euclidean algorithm gives a better worst case approximation than Nearest Neighbour algorithm i.e the ratio of lengths of approximate tour to length of optimal tour is O(log n) for Nearest Neighbour where as it is 2 for Euclidean Algorithm. However in this particular case, Nearest Neighbour approximation is a better initialization (in this case) and converges to a better tour than euclidean intialization.
+In general, Euclidean initialization is a better one than NN initialization.  
+
+
+TASK 2 vs TASK 6:
+==================
+The number of iterations required to converge is lesser when both 2-opt and 3-opt neighbours are generated instead of just 2-opt neighbours.
+This is because due to 3-edge flips, there is faster convergence when the initial tour is far from optimal i.e 3-edge flips leads to a much better neighbour in a single iteration than 2-edge flips. But when the tour is closer to optimal solution, two edge flips are more likely to lead to the best neighbour. Therefore the overall convergence is muche faster when 2-opt + 3-opt neighbours are used and also the solution is slightly more optimal than the case when only 2-opt neighbours are considered. 
+
+
+TASK 3 vs TASK 7:
+==================
+In this case also, the number of iterations required to converge is lesser when both 2-opt and 3-opt neighbours are generated instead of just 2-opt neighbours.
+This is because due to 3-edge flips, there is faster convergence when the initial tour is far from optimal i.e 3-edge flips leads to a much better neighbour in a single iteration than 2-edge flips. But when the tour is closer to optimal solution, two edge flips are more likely to lead to the best neighbour. Therefore the overall convergence is much faster when 2-opt + 3-opt neighbours are used and also the solution is slightly more optimal than the case when only 2-opt neighbours are considered. 
+
+
+TASK 4 vs TASK 8 :
+===================
+
+In this case, the number of iterations taken to converge is almost same for both the neighbour generating methods. Also both the methods converge to solutions with similar length. However, 2-opt + 3-opt neighbour generating method is slightly better than the 2-opt method in terms of both the number of iterations and the length of the solution since 2-opt + 3-opt considers a wider set of neighbours in each step as compared to 2-opt generating method.
